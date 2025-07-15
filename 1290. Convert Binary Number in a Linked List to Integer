@@ -1,0 +1,25 @@
+ 
+class Solution {
+public:
+    int getDecimalValue(ListNode* head) {
+        ListNode *re=head;
+        vector<int>v;
+        while(re!=NULL)
+        {
+            v.push_back(re->val);
+            re=re->next;
+
+        }
+        reverse(v.begin(),v.end());
+        int ans=0;
+        for(int i=0;i<v.size();i++)
+        {
+            if(v[i]==1)
+            ans+=(1<<i);
+        }
+        return ans;
+
+        
+        
+    }
+};
