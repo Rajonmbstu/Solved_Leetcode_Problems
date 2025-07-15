@@ -1,0 +1,31 @@
+
+class Solution {
+public:
+    ListNode* swapPairs(ListNode* head) { 
+        ListNode* cur=head;
+        vector<int>v;
+        while(cur!=NULL)
+        {
+            v.push_back(cur->val);
+            cur=cur->next;
+        }
+        int l;
+        if(v.size()%2==0)
+        l=v.size();
+        else
+        l=v.size()-1;
+        for(int i=0;i<l-1;i+=2)
+        swap(v[i],v[i+1]);
+
+        ListNode* newhead=new ListNode(-1);
+        ListNode* ne=newhead;
+        for(auto u:v)
+        {
+            ne->next=new ListNode(u);
+            ne=ne->next;
+        }
+        return newhead->next;
+        
+        
+    }
+};
