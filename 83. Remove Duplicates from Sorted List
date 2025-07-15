@@ -1,0 +1,25 @@
+
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        ListNode *ret=head;
+        set<int>st;
+        while(ret!=NULL)
+        {
+            st.insert(ret->val);
+            ret=ret->next;
+
+        }
+        ListNode* newhead=new ListNode(-1);
+        ListNode* curr=newhead;
+        for(auto i:st)
+        {
+            curr->next=new ListNode(i);
+            curr=curr->next;
+        }
+
+        return newhead->next;
+
+        
+    }
+};
