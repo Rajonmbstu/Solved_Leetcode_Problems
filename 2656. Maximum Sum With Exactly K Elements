@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int maximizeSum(vector<int>& nums, int k) {
+        sort(nums.rbegin(),nums.rend());
+        int l=nums[0]+k-1;
+        int f=nums[0];
+        long long int ans=((l+f)*k)/2;
+        return ans;
+
+        
+    }
+};
