@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int maximumLength(vector<int>& nums) {
+        int even=0,odd=0,eo=1,ans=0;
+        for(int i=0;i<nums.size()-1;i++)
+        {
+            if(nums[i]%2==0)even++;
+            if(nums[i]%2==1)odd++;
+            if((nums[i]+nums[i+1])%2==1)
+            eo++;
+          
+        }
+      
+          if(nums[nums.size()-1]%2==0)even++;
+           else
+           odd++;
+     int mx=max(even,odd);
+     return max(mx,eo);
+
+        
+    }
+};
