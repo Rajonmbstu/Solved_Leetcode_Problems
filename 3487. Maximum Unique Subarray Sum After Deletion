@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int maxSum(vector<int>& nums) {
+        set<int>st;
+        int sum=0;
+        for(int i=0;i<nums.size();i++){
+            sum+=nums[i];
+        st.insert(nums[i]);
+        }
+        int mxval=*prev(st.end());
+        if(mxval<0)
+        return mxval;
+        int ans=0;
+        for(auto u:st)
+        {
+            if(u>0)
+            ans+=u;
+
+        }
+        return ans;
+        
+
+    }
+};
