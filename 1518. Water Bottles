@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int numWaterBottles(int n, int k) {
+        int ans=n;
+        int empty=n;
+        while(n>=k){
+            int nb=empty/k;
+            ans+=nb;
+            empty=nb+empty%k;
+        }
+        return ans;
+        
+    }
+};
